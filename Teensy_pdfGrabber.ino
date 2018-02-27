@@ -1,7 +1,24 @@
-/* Simple USB Mouse Example
-   Teensy becomes a USB mouse and moves the cursor in a triangle
+/* USB Mouse/Keyboard Example
+ * Board: Teensy 3.2
+   Teensy becomes a USB mouse and Keyboard
 
-   You must select Mouse from the "Tools > USB Type" menu
+   Hardware:
+   Connect button/switch to pin 10
+   
+   Code Setup Instructions:
+   Select correct board/port
+   Select "Keyboard + Mouse + Joystick" from the "Tools > USB Type" menu
+   Upload code to Teensy 3.2
+
+   Use Instructions on Mac (based on what worked for me)
+   Use: Google Chrome > make window full screen
+   Go to: https://www.boarddocs.com/ca/sjeccd/Board.nsf/Public
+   Click "policies" in upper right hand corner
+   Click "district" then "board policy chapter one" from drop down
+   Manually click print button on page > click second print button that pops up on lower right corner > click save > save as a pdf > click save to save as pdf
+   
+   
+   
 
    This example code is in the public domain.
 */
@@ -40,7 +57,7 @@
  *
  *
  */
-
+//#include <Mouse.h>// not needed, when you select USB Type IDE includes this library by default
 #include <Keyboard.h>
 
 int i = 10;
@@ -49,8 +66,8 @@ int resetButtState = LOW; // reset button state
 int stepSize = 1; // standard step size, controls mouse movement
 
 
-char ctrlKey = KEY_LEFT_GUI; //supposed to be used for OSX
-//char ctrlKey = KEY_LEFT_CTRL; //supposed to be used for windows/linux
+//KEY_LEFT_GUI; //supposed to be used for OSX
+//KEY_LEFT_CTRL; //supposed to be used for windows/linux
 
 void setup()
 {
